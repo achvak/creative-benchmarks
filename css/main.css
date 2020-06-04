@@ -37,7 +37,7 @@ body {
 h1{
   font-family: "Helvetica-Bd";
   font-size: 60px;
-  line-height: 1; 
+  line-height: 1.17; 
   margin: 0;   
 }
 
@@ -75,22 +75,26 @@ p.title{
     align-items: center;
 }
 
-.col-6{
-    width: 50%;
+.hint{
+  margin-top: 30px;
+
 }
 
-.col-2{
-    width: 16.6%;
+.col-6{
+    width: 50%;
+    padding: 15px;
+}
+
+.col-12{
+    width: 100%;
+    padding: 15px;
 }
 
 .col-10{
     width: 83.3%;
 }
 
-.offset-10{
-    margin-left: 83.3%;
 
-}
 
 video{
     width: 100%;
@@ -128,10 +132,7 @@ video{
 }
 
 .container{
-    padding: 20px 80px 20px 200px;
-    height: 100%;
-    display: flex;
-    align-items: center;
+    padding: 40px 80px 150px 200px;
 }
 
 .main .content {
@@ -153,9 +154,16 @@ video{
     color: #FF5D5C;
 }
 
+#sl_2{
+    color: #00CFDA;
+}
+
+#sl_3{
+    color: #935DF8;
+}
+
 .slider .slide .slide-section {
     width: 100vw;
-    height: 100vh;
     padding: 20px;
 }
 .slidesWrapper {
@@ -224,10 +232,35 @@ video{
     padding-bottom: 0;
 }
 
-.wondering{
-    max-width: 120px;
-    float: right;
-}
+
 .wondering2{
     max-width: 100px;
+    margin-bottom: -20px;
+}
+
+
+
+.footer{
+  text-align: center;
+  height: 100vh;
+  align-items: center;
+  display: flex;
+}
+
+.point{
+  width: 80px;
+}
+
+.footer h1{
+  margin-bottom: 50px;
+}
+
+.btn{
+    border: 2px solid;
+    padding: 10px 40px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 18px;
+    font-family: "Helvetica-Bd";
+    color: #150392;
 }
