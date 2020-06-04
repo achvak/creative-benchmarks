@@ -1,0 +1,233 @@
+body {
+    background-color: #fff;
+    margin: 0;
+  font-family: "Helvetica-Rg";
+  color: #150392;
+  background-color: #fff;
+
+}
+
+*{
+    box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Helvetica-Bd";
+  src: url(https://static.ironsrc.com/wp-content/themes/ironsrc/fonts/NHaasGroteskTXPro-75Bd.woff);
+}
+
+@font-face {
+  font-family: "Helvetica-Rg";
+  src: url(https://static.ironsrc.com/wp-content/themes/ironsrc/fonts/HelveticaNeueLT-Roman.woff);
+}
+
+
+@font-face {
+  font-family: "TiemposText";
+  src: url(https://static.ironsrc.com/wp-content/themes/ironsrc/fonts/TiemposText-SemiboldItalic.woff2);
+}
+
+.italic{
+  font-family: "TiemposText"; 
+  color:#150392;   
+}
+
+
+
+h1{
+  font-family: "Helvetica-Bd";
+  font-size: 60px;
+  line-height: 1; 
+  margin: 0;   
+}
+
+h2{
+  font-family: "Helvetica-Bd";
+  font-size: 44px;
+  line-height: 1.2;  
+  margin: 0;  
+}
+
+h3{
+  font-family: "Helvetica-Bd";
+  font-size: 32px;
+  line-height: 1.2;
+  margin: 0; 
+  margin-bottom: 20px;     
+}
+
+p{
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+p.title{
+    font-family: "Helvetica-Bd";
+    font-size: 18px;
+    line-height: 1.4;
+    margin: 0;
+}
+
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.col-6{
+    width: 50%;
+}
+
+.col-2{
+    width: 16.6%;
+}
+
+.col-10{
+    width: 83.3%;
+}
+
+.offset-10{
+    margin-left: 83.3%;
+
+}
+
+video{
+    width: 100%;
+}
+
+
+.slides{
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    margin: 0;
+    width: 100%;
+}
+.slides li{
+    padding: 0px 10px;
+    cursor: pointer;
+}
+.main {
+    display: flex;
+}
+.main .sidebar {
+    width: 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+}
+
+#bubbles {
+  width: 100%;
+  height: 500px;
+}
+
+.container{
+    padding: 20px 80px 20px 200px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.main .content {
+    width: 100%;
+}
+.slider {
+    width: 100%;
+    overflow-x: hidden;
+    /*height: 100%;*/
+    position: relative;
+}
+.slider .slide {
+
+    height: 100%;
+    float: left;
+
+}
+#sl_1{
+    color: #FF5D5C;
+}
+
+.slider .slide .slide-section {
+    width: 100vw;
+    height: 100vh;
+    padding: 20px;
+}
+.slidesWrapper {
+    float: left;
+    transition: all 0.8s ease 0s;
+}
+.header {
+    display: flex;
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    top: 0;
+    justify-content: space-around;
+    z-index: 2;
+    align-items: center;
+    padding: 20px;
+}
+.logo{
+    width: 150px;
+}
+.verticalNav {
+    list-style-type: none;
+}
+.verticalNav li{
+     border-left: 1px solid #150392;
+     padding: 20px 0;
+     padding-left: 17px;
+     position: relative;
+     line-height: 1;
+     color: #150392;
+     font-size: 14px;
+}
+.verticalNav li:before{
+    display: block;
+    width: 9px;
+    height: 9px;
+    border-radius: 100%;
+    border: 2px solid #150392;
+    background: #fff;
+    position: absolute;
+    content: '';
+    left: -7px;
+    top: 50%;
+    transform: translate(0, -50%);
+    transition: 0.2s;
+}
+.verticalNav li:first-child:before{
+    top: 0;
+    transform: none;
+}
+.verticalNav li:last-child:before{
+    top: inherit;
+    transform: none;
+    bottom: 0;
+}
+.verticalNav li.active{
+    font-weight: bold;
+}
+.verticalNav li.active:before{
+    background-color: #150392;
+}
+.verticalNav li:first-child {
+    padding-top: 0;
+}
+.verticalNav li:last-child {
+    padding-bottom: 0;
+}
+
+.wondering{
+    max-width: 120px;
+    float: right;
+}
+.wondering2{
+    max-width: 100px;
+}
