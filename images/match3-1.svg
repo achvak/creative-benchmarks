@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="649px" height="641px" viewBox="0 0 649 641" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>Group 14</title>
+    <desc>Created with Sketch.</desc>
+    <g id="In-ad-data-Final" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Match3" transform="translate(-642.000000, -2095.000000)">
+            <g id="Group-14" transform="translate(642.000000, 2095.000000)">
+                <g id="Group-2">
+                    <circle id="Oval" stroke="#150392" stroke-width="3" cx="299.5" cy="335.5" r="158"></circle>
+                    <ellipse id="Oval-Copy-14" stroke="#150392" stroke-width="3" cx="380.5" cy="96" rx="94" ry="94.5"></ellipse>
+                    <circle id="Oval-Copy-3" fill="#935DF8" cx="540.5" cy="219.5" r="108.5"></circle>
+                    <circle id="Oval-Copy-7" stroke="#150392" stroke-width="3" cx="111.5" cy="529.5" r="110"></circle>
+                    <text id="Casual" font-family="NHaasGroteskTXPro-75Bd, Neue Haas Grotesk Text Pro" font-size="19.8" font-weight="bold" line-spacing="25.2" fill="#150392">
+                        <tspan x="78.7112" y="562">Casual</tspan>
+                    </text>
+                    <text id="60%" font-family="NHaasGroteskTXPro-75Bd, Neue Haas Grotesk Text Pro" font-size="44" font-weight="bold" line-spacing="48" fill="#150392">
+                        <tspan x="49.372" y="531.132">60%</tspan>
+                    </text>
+                    <text id="58%" font-family="NHaasGroteskTXPro-75Bd, Neue Haas Grotesk Text Pro" font-size="44" font-weight="bold" line-spacing="48" fill="#FFFFFF">
+                        <tspan x="490" y="220">58%</tspan>
+                    </text>
+                    <text id="51%" font-family="NHaasGroteskTXPro-75Bd, Neue Haas Grotesk Text Pro" font-size="44" font-weight="bold" line-spacing="48" fill="#150392">
+                        <tspan x="330" y="99">51%</tspan>
+                    </text>
+                    <text id="Match-3" font-family="NHaasGroteskTXPro-75Bd, Neue Haas Grotesk Text Pro" font-size="22" font-weight="bold" line-spacing="28" fill="#FFFFFF">
+                        <tspan x="496.703" y="248">Match-3</tspan>
+                    </text>
+                    <text id="Midcore" font-family="NHaasGroteskTXPro-75Bd, Neue Haas Grotesk Text Pro" font-size="22" font-weight="bold" line-spacing="28" fill="#150392">
+                        <tspan x="337.484" y="126">Midcore</tspan>
+                    </text>
+                </g>
+                <text id="85%" font-family="NHaasGroteskDSPro-75Bd, Neue Haas Grotesk Display Pro" font-size="80" font-weight="bold" line-spacing="85" fill="#0D148C">
+                    <tspan x="202.42" y="351.2">85%</tspan>
+                </text>
+                <text id="Hyper-casual" font-family="NHaasGroteskTXPro-75Bd, Neue Haas Grotesk Text Pro" font-size="19.8" font-weight="bold" line-spacing="25.2" fill="#150392">
+                    <tspan x="234" y="383">Hyper-casual</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

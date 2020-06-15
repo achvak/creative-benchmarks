@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="476px" height="483px" viewBox="0 0 476 483" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>Group 6</title>
+    <desc>Created with Sketch.</desc>
+    <g id="In-ad-data-Final" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Midcore" transform="translate(-320.000000, -4884.000000)">
+            <g id="Group-6" transform="translate(320.000000, 4884.000000)">
+                <g id="Group-3">
+                    <g id="Group-16-Copy" transform="translate(69.000000, 0.000000)">
+                        <ellipse id="Oval" stroke="#150392" stroke-width="4" cx="160.2" cy="305.70953" rx="157.3" ry="157.60953"></ellipse>
+                        <circle id="Oval-Copy-6" stroke="#150392" stroke-width="3" cx="168.5" cy="73.5" r="72"></circle>
+                        <text id="73%" font-family="NHaasGroteskDSPro-75Bd, Neue Haas Grotesk Display Pro" font-size="80" font-weight="bold" line-spacing="85" fill="#0D148C">
+                            <tspan x="72.34" y="317.2">73%</tspan>
+                        </text>
+                        <text id="34%" font-family="NHaasGroteskTXPro-75Bd, Neue Haas Grotesk Text Pro" font-size="32.4" font-weight="bold" line-spacing="43.2" fill="#150392">
+                            <tspan x="132" y="73">34%</tspan>
+                        </text>
+                        <text id="Match-3" font-family="HelveticaNeue, Helvetica Neue" font-size="16.2" font-weight="normal" line-spacing="23.4" fill="#150392">
+                            <tspan x="136" y="94">Match-3</tspan>
+                        </text>
+                        <text id="Hyper-casual" font-family="NHaasGroteskTXPro-75Bd, Neue Haas Grotesk Text Pro" font-size="19.8" font-weight="bold" line-spacing="25.2" fill="#150392">
+                            <tspan x="95.4" y="354.8">Hyper-casual</tspan>
+                        </text>
+                    </g>
+                    <circle id="Oval-Copy-16" stroke="#150392" stroke-width="3" cx="415.5" cy="422.5" r="59"></circle>
+                    <text id="28%" font-family="NHaasGroteskTXPro-75Bd, Neue Haas Grotesk Text Pro" font-size="25.2" font-weight="bold" line-spacing="34.2" fill="#150392">
+                        <tspan x="389.4312" y="421">28%</tspan>
+                    </text>
+                    <text id="Casual" font-family="HelveticaNeue-Bold, Helvetica Neue" font-size="12.6" font-weight="bold" line-spacing="23.4" fill="#150392">
+                        <tspan x="393.8549" y="435">Casual</tspan>
+                    </text>
+                    <circle id="Oval-Copy-5" fill="#2062EC" cx="84.5" cy="110.5" r="84.5"></circle>
+                    <text id="39%" font-family="NHaasGroteskTXPro-75Bd, Neue Haas Grotesk Text Pro" font-size="32.4" font-weight="bold" line-spacing="43.2" fill="#FFFFFF">
+                        <tspan x="48" y="111">39%</tspan>
+                    </text>
+                    <text id="Midcore" font-family="HelveticaNeue-Bold, Helvetica Neue" font-size="16.2" font-weight="bold" line-spacing="23.4" fill="#FFFFFF">
+                        <tspan x="52.7156" y="133">Midcore</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
