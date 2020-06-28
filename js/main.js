@@ -74,7 +74,8 @@
                             item.classList.remove('active');
                         })
                         e.target.classList.add('active');
-                        var fromTop = slider.querySelector('.' + item.dataset.target).getBoundingClientRect().top;
+
+                        var fromTop = slider.querySelector('.slide-section[data-menu=' + item.dataset.target + ']' ).offsetTop;
                         window.scrollTo({
                             top: fromTop,
                             // behavior: "smooth"
@@ -84,7 +85,7 @@
                         //     top: fromTop,
                         //     behavior: "smooth"
                         // });
-                        //
+
                         // window.onscroll = function(e) {
                         //     var currentScrollOffset = window.pageYOffset || document.documentElement.scrollTop
                         //     if (currentScrollOffset === fromTop) {
@@ -95,6 +96,7 @@
                     })
                 })
             }
+            navigationHandler();
 
             function init() {
                 navigationHandler();
@@ -112,7 +114,8 @@
                 var slideSection = slider.querySelectorAll('.slide:first-child .slide-section');
                 slideSection.forEach(function (item, index) {
                     if(index == 0 && pageYOffset == 0) item.classList.add('active');
-                    var middle = (item.getBoundingClientRect().top + item.getBoundingClientRect().bottom) / 2;
+                    // var middle = (item.getBoundingClientRect().top + item.getBoundingClientRect().bottom) / 2;
+                    var middle = item.offsetTop + (item.offsetHeight / 2);
                     slideMap.push({'slideSection': '.slide:first-child .slide-section:nth-child('+ parseInt(index + 1) +')', 'pinPoint': middle});
                 })
             }
@@ -152,10 +155,10 @@
                                 preventScroll = false
                             }
                             if(section.classList.contains('active') && !preventScroll) {
-                                window.scrollTo({
-                                    top: parseInt(section.getBoundingClientRect().top + scrollTop),
-                                    behavior: "smooth"
-                                });
+                                // window.scrollTo({
+                                //     top: parseInt(section.getBoundingClientRect().top + scrollTop),
+                                //     behavior: "smooth"
+                                // });
                                 setActiveMenu(section.dataset.menu)
                                 preventScroll = true;
                             }
@@ -183,6 +186,8 @@
             addSliderWrapper();
             setActiveNavItem();
 
+            verticalNavigation().init();
+
             setActiveSlide();
             setNavigationHandler();
         }
@@ -196,4 +201,3 @@
         sliderModule('.slider', '.slides').init();
     }
 })(window, undefined)
-
