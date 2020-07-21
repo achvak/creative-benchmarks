@@ -554,3 +554,26 @@ border: 2px solid;
   width: 47px;
   margin-bottom: -12px;
 }
+
+.tooltip {
+    position: relative;
+}
+.tooltip .tooltip-content {
+    display: none;
+    position: absolute;
+    top: 41px;
+    right: -20px;
+    padding: 10px;
+    max-width: 257px;
+    width: 100%;
+    box-shadow: 0 0 1px #ccc;
+    font-size: 14px;
+    line-height: 1.4;
+    font-family: "Helvetica-Rg";
+    color: #2713a3;
+    z-index: 9;
+    background: #fff;
+}
+.tooltip:hover  .tooltip-content {
+    display: block;
+}
