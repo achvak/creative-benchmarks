@@ -577,3 +577,47 @@ border: 2px solid;
 .tooltip:hover  .tooltip-content {
     display: block;
 }
+
+.chart {
+    border-radius: 50%;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.chart .child {
+    border-radius: 50%;
+    position: absolute;
+}
+.chart .child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.chart .child:hover {
+    /*animation-duration: 1s;
+    //animation-name: rotateChart ; */
+    animation:rotateChart 1s linear infinite;
+}
+.chart .persent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.chart .persent span{
+    font-size: 70%;
+}
+
+
+@keyframes rotateChart {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(30deg);
+    }
+    100% {
+        transform: rotate(-30deg);
+    }
+}

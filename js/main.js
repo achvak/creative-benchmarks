@@ -220,3 +220,37 @@
     }
 
 })(window, undefined)
+
+function bubbleChart(selector) {
+    var chart = document.querySelectorAll(selector);
+
+    function setPosition() {
+
+        chart.forEach(function (item) {
+
+            var radius = parseInt(item.offsetWidth/2);
+            var children = item.querySelectorAll('.child');
+            children.forEach(function (item) {
+
+                var angel = parseInt(item.dataset.angel);
+                var persent = document.createElement('span');
+                var text = document.createElement('span');
+                text.innerText = item.dataset.text;
+
+                persent.classList.add('persent');
+                persent.innerHTML = item.dataset.persent + '<br>';
+                persent.appendChild(text);
+                item.appendChild(persent);
+
+                item.style.left = Math.cos(angel) * (radius + item.offsetWidth/2) + radius - item.offsetWidth/2 + 'px';
+                item.style.top = Math.sin(angel) * (radius + item.offsetWidth/2) + radius - item.offsetWidth/2 + 'px';
+            })
+        })
+
+    }
+    setPosition()
+    // console.log(parseData(chart[0]));
+}
+window.addEventListener('load', function () {
+    bubbleChart('.chart');
+})
