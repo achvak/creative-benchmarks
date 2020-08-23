@@ -64,6 +64,7 @@
             currentSlide = nextSlide;
             setActiveNavItem();
             currentPosition = moveTo;
+
         }
 
 
@@ -83,7 +84,7 @@
                         var fromTop = slider.querySelector('.slide-section[data-menu=' + item.dataset.target + ']' ).offsetTop;
                         window.scrollTo({
                             top: fromTop,
-                            // behavior: "smooth"
+                            behavior: "smooth"
                         });
                         preventStickScroll = false;
                         // window.scrollTo({
@@ -254,3 +255,7 @@ function bubbleChart(selector) {
 window.addEventListener('load', function () {
     bubbleChart('.chart');
 })
+
+
+
+

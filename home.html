@@ -3,8 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="./js/main.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <link href="./css/main.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript">
+
+
+
+
+    $(document).ready(function() {    
+        $('body').on('click', '.btn', function(e) {
+            $('.overlay, .modal').addClass('active')
+            e.preventDefault();
+        }).on('click', '.overlay , .close', function(e) {
+            $('.overlay, .modal').removeClass('active')
+            e.preventDefault();
+        });
+        $('#iframe').on("load", function() {
+            $(this).css("opacity" , "1")
+        });
+    }); 
+
+
+
+
+
+        $(window).scroll(function() {
+                $(".circles").each(function(){
+
+                    var top_of_element = $(this).offset().top;
+                    var bottom_of_element = $(this).offset().top + $(this).outerHeight();
+                    var bottom_of_screen = $(window).scrollTop() + window.innerHeight;
+                    var top_of_screen = $(window).scrollTop();
+
+                    if((bottom_of_screen > top_of_element) && (bottom_of_screen < (bottom_of_element+100))){
+                        $(this).addClass("in")
+                    }else{
+                       $(this).removeClass("in") 
+                    }
+                });
+            });
+
+              
+        
+    </script>
 </head>
 <body>
 <div class="wrapper">
@@ -16,11 +59,11 @@
             <li data-id="3">Match-3 </li>
             <li data-id="4">Midcore</li>
         </ul>
-        <div class="name-wrapper"><h6 class="italic">Creative<br>Benchmarks *</h6></div>
+        <div class="name-wrapper"><h6 class="italic"><a href="index.html">Creative<br>Benchmarks *</a></h6></div>
     </div>
     <div class="main">
         <div class="sidebar">
-            <ul class="verticalNav">
+            <ul class="verticalNav"  id="sidebar">
                 <li data-target="first" class="active">Intro</li>
                 <li data-target="second">Time-to-engage rate</li>
                 <li data-target="third">Engagement rate</li>
@@ -30,6 +73,7 @@
                 <li data-target="seven">IPM</li>
                 <li data-target="eight">Quick tip</li>
        </ul>
+       <a class="btn side">Get the guid</a>
         </div>
         <div class="content">
             <div class="slider">
@@ -42,7 +86,7 @@
                                     <p>Creatives for hyper-casual games have some of the highest in-ad data metrics in the industry. Like the gameplay, the creatives are snackable, easy to understand, and surprisingly fun to lose.</p>
                                 </div>
                                 <div class="col-6">
-                                    <video autoplay muted loop>
+                                    <video autoplay muted loop poster="images/intro-hyper.png">
                                         <source src="images/first_IntroS.mp4" type="video/mp4">
                                     </video>
                                 </div>
@@ -53,12 +97,12 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-6">
-                                    <video autoplay muted loop>
+                                    <video autoplay muted loop poster="images/engage-hyper.png">
                                         <source src="images/sec_EngageS.mp4" type="video/mp4">
                                     </video>
                                 </div>
                                 <div class="col-6">
-                                        <h3>The average<span class="italic tooltip"> time-to-engage rate*<span class="tooltip-content">The benchmarks for casual creatives, which includes puzzle, word, card,</span></span> for hyper-casual creatives is the shortest of all genres. </h3>
+                                        <h3>The average<span class="italic tooltip"> Time-to-engage rate*<span class="tooltip-content">The number of seconds it takes for users to first tap on the ad</span></span> for hyper-casual creatives is the shortest of all genres. </h3>
                                         <h1>3.5 seconds avg. </h1>
                                     </div>
                                 </div>
@@ -68,7 +112,7 @@
                         <div class="container">
                             <div class="row hascircles">
                                 <div class="col-6">
-                                    <h3>Designed to attract the widest audience possible, hyper-casual creatives have the highest <span class="italic" >engagement rate* </span> out of all the genres.</h3>
+                                    <h3>Designed to attract the widest audience possible, hyper-casual creatives have the highest <span class="italic tooltip"> Engagement Rate*<span class="tooltip-content">The percentage of users who actively engage with ads in an app</span></span> out of all the genres.</h3>
                                 </div>
                                 <div class="col-6 circleholder hyper-1">
                                     <div class="circles">
@@ -97,12 +141,12 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-6">
-                                    <h3>The <span class="italic">time-to-complete rate*</span> for hyper-casual creatives is the shortest of all the genres. That’s because gameplay is straightforward - there’s usually not even a need for extra text or hints to help the user understand the task.
+                                    <h3>The <span class="italic tooltip">Time-to-complete rate*<span class="tooltip-content">The number of seconds it takes for users to complete the ad</span></span> for hyper-casual creatives is the shortest of all the genres. That’s because gameplay is straightforward - there’s usually not even a need for extra text or hints to help the user understand the task.
                                     </h3>
                                     <h1>12 seconds avg. </h1>
                                 </div>
                                 <div class="col-6">
-                                    <video autoplay muted loop>
+                                    <video autoplay muted loop poster="images/complete-hyper.png">
                                         <source src="images/complete3.mp4" type="video/mp4">
                                     </video>
                                 </div>
@@ -111,9 +155,11 @@
                     </div>
                     <div class="slide-section" data-menu="fifth">
                         <div class="container">
+            
                             <div class="row hascircles">
+
                                 <div class="col-6">
-                                    <h3>Hyper-casual creatives have the highest <span class="italic">completion rate*</span>, likely because the gameplay experience of the creative is designed to be short and sweet.
+                                    <h3>Hyper-casual creatives have the highest <span class="italic tooltip">Completion rate*<span class="tooltip-content">The percentage of users who complete the playable ad</span></span>, likely because the gameplay experience of the creative is designed to be short and sweet.
                                     </h3>
                                 </div>
                                 <div class="col-6 circleholder hyper-2">
@@ -141,23 +187,27 @@
                     </div>
                     <div class="slide-section" data-menu="six">
                         <div class="container">
-                           <div class="row">
+                           <div class="row align-start">
                                 <div class="col-6">
                                     <h3>Hyper-casual creatives have the highest
-                                    <span class="italic">click-to-store rate*</span> by far. </h3>
+                                    <span class="italic tooltip">Click-to-store rate*<span class="tooltip-content">The percentage of users who go to the app store from the ad</span></span> by far. </h3>
                                 </div>
                                 <div class="col-6">
-                                    <div class="row">
+                                    <div class="row  align-start">
                                         <div class="col-6">
-                                            <h1>52% avg.</h1>
+                                            <h2>52% avg.</h2>
                                             <p class="title">out of completions</p>
                                         </div>
                                         <div class="col-6">
-                                            <h1>38% avg.</h1>
+                                            <h2>38% avg.</h2>
                                             <p class="title">out of total impressions</p>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row hint">
                                 <div class="col-12">
                                     <h1><span><video  autoplay muted loop class="wondering2">
                                         <source src="images/wondering_1.mp4"  type="video/mp4">
@@ -172,12 +222,13 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-5">
-                                    <video autoplay muted loop>
+                                    <video autoplay muted loop poster="images/ipm-hyper.png">
                                         <source src="images/hyper-ipm.mp4" type="video/mp4">
                                     </video>
                                 </div>
                                 <div class="col-6 offset-1">
-                                    <h3>The <span class="italic"> IPM*</span> for hyper-casual creatives is the highest of all the genres, but the range is too large for an exact average. Depending on the geo, OS, or title, IPM can be as high as 100 and low as 15.</h3>
+
+                                    <h3>The <span class="italic tooltip">IPM*<span class="tooltip-content"> Installs per mille, the number of app installs per one thousand ad impressions</span></span> for hyper-casual creatives is the highest of all the genres, but the range is too large for an exact average. Depending on the geo, OS, or title, IPM can be as high as 100 and low as 15.</h3>
                                 </div> 
                             </div>                           
                         </div>
@@ -186,9 +237,20 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-12">
-                                    <h3 style="color: #2713a3; margin-bottom: 10px;">For your next A/B test, try to: 
-                                    <span> <video class="shas" autoplay muted loop><source src="images/shas-hand.mp4" type="video/mp4"></video></span></h3>
+                                    <h3 style="color: #2713a3;"><span> <video class="shas" autoplay muted loop><source src="images/shas-hand.mp4" type="video/mp4"></video></span>  For your next A/B test, try to: 
+                                    </h3>
                                     <h1>Experiment with the win/lose ratio. We usually see higher IPM for hyper-casual creatives when users lose the gameplay, since most gamers like a challenge.</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row download">
+                                <div class="col-6">
+                                <h3>Want expert tips and insights for leveling up your creative strategy?</h3>
+                                    <a class="btn">Get the full guid</a>
+                                </div>
+                                <div class="col-6">
+                                    <img src="images/ebook.png">
                                 </div>
                             </div>
                         </div>
@@ -207,7 +269,7 @@
                                     <p>The benchmarks for casual creatives, which includes puzzle, word, card, and coloring games, are on the low end of the spectrum. Metagames and a strong visual language make casual games more complex to wrap in a playable than other genres.</p>
                                 </div>
                                 <div class="col-6">
-                                    <video autoplay muted loop>
+                                    <video autoplay muted loop poster="images/intro-casual.png">
                                         <source src="images/intro-casual1.mp4" type="video/mp4">
                                     </video>
                                 </div>
@@ -218,12 +280,12 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-6">
-                                    <video autoplay muted loop>
+                                    <video autoplay muted loop poster="images/engage-casual.png">
                                         <source src="images/engage-casual2.mp4" type="video/mp4">
                                     </video>
                                 </div>
                                 <div class="col-6">
-                                    <h3>The average <span class="italic">time-to-engage rate* </span>  for casual games is quicker than match-3 but longer than hyper-casual. </h3>
+                                    <h3>The average <span class="italic tooltip">Time-to-engage rate*<span class="tooltip-content"> The number of seconds it takes for users to first tap on the ad</span></span>for casual games is quicker than match-3 but longer than hyper-casual. </h3>
                                     <h1>4.2 seconds avg.</h1>
                                 </div>
                             </div>
@@ -233,7 +295,7 @@
                         <div class="container">
                             <div class="row hascircles">
                                 <div class="col-6">
-                                    <h3>Because the genre is so varied, tutorials for casual creatives aren’t that intuitive and require more thinking from the user, which is why <span class="italic" >engagement rate*</span> is the most important metric for casual creatives to optimize.</h3>
+                                    <h3>Because the genre is so varied, tutorials for casual creatives aren’t that intuitive and require more thinking from the user, which is why <span class="italic tooltip"> Engagement Rate*<span class="tooltip-content">The percentage of users who actively engage with ads in an app</span></span> is the most important metric for casual creatives to optimize.</h3>
                                 </div>
                                 <div class="col-6 circleholder casual-1">
                                     <div class="circles">
@@ -262,11 +324,11 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-6">
-                                    <h3>The <span class="italic">time-to-complete rate*</span> for casual creatives is slightly longer than hyper-casual because they’re more difficult to complete - like solving a puzzle or finding a missing word.</h3>
+                                    <h3>The <span class="italic tooltip">Time-to-complete rate*<span class="tooltip-content">The number of seconds it takes for users to complete the ad</span></span> for casual creatives is slightly longer than hyper-casual because they’re more difficult to complete - like solving a puzzle or finding a missing word.</h3>
                                     <h1>17 seconds avg.</h1>
                                 </div>
                                 <div class="col-6">
-                                    <video autoplay muted loop>
+                                    <video autoplay muted loop poster="images/complete-casual.png">
                                         <source src="images/complete-casual3.mp4" type="video/mp4">
                                     </video>
                                 </div>
@@ -277,7 +339,7 @@
                         <div class="container">
                             <div class="row hascircles">
                                 <div class="col-6">
-                                    <h3>The <span class="italic">completion rate*</span> for casual creatives is the lowest of all the genres. They aren’t that easy to complete in just 30 seconds - rather than swiping across the screen, users need to really think, and this complexity increases drop rates. </h3>
+                                    <h3>The <span class="italic tooltip">Completion rate*<span class="tooltip-content">The percentage of users who complete the playable ad</span></span> for casual creatives is the lowest of all the genres. They aren’t that easy to complete in just 30 seconds - rather than swiping across the screen, users need to really think, and this complexity increases drop rates. </h3>
                                 </div>
                                 <div class="col-6 circleholder casual-2">
                                     <div class="circles">
@@ -304,22 +366,26 @@
                     </div>
                     <div class="slide-section" data-menu="six">
                         <div class="container">
-                           <div class="row">
+                           <div class="row align-start">
                                 <div class="col-6">
-                                    <h3>Casual creatives also have the lowest<span class="italic"> click-to-store rate*</span> out of all the genres.</h3>
+                                    <h3>Casual creatives also have the lowest <span class="italic tooltip">Click-to-store rate*<span class="tooltip-content">The percentage of users who go to the app store from the ad</span></span> out of all the genres.</h3>
                                 </div>
                                 <div class="col-6">
                                     <div class="row">
                                         <div class="col-6">
-                                            <h1>32% avg.</h1>
+                                            <h2>32% avg.</h2>
                                             <p class="title">out of completions</p>
                                         </div>
                                         <div class="col-6">
-                                            <h1>9% avg.</h1>
+                                            <h2>9% avg.</h2>
                                             <p class="title">out of total impressions</p>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row hint">
                                 <div class="col-12">
                                     <h1><span><video  autoplay muted loop class="wondering2">
                                         <source src="images/wondering-casual2.mp4"  type="video/mp4">
@@ -332,12 +398,12 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-5">
-                                    <video autoplay muted loop>
+                                    <video autoplay muted loop poster="images/ipm-casual.png">
                                         <source src="images/casual-ipm.mp4" type="video/mp4">
                                     </video>
                                 </div>
                                 <div class="col-6 offset-1">
-                                    <h3>Casual games don’t appeal to everyone, but they do straddle across many demographics, keeping <span class="italic">IPM*</span> middle range. </h3>
+                                    <h3>Casual games don’t appeal to everyone, but they do straddle across many demographics, keeping <span class="italic tooltip">IPM*<span class="tooltip-content"> Installs per mille, the number of app installs per one thousand ad impressions</span></span> middle range. </h3>
                                     <h1>8-10 avg. IPM</h1>
                                 </div> 
                             </div>                           
@@ -350,6 +416,17 @@
                                     <h3 style="color: #2713a3; margin-bottom: 10px;">For your next A/B test, try to: 
                                     <span> <video class="shas" autoplay muted loop><source src="images/shas-hand.mp4" type="video/mp4"></video></span></h3>
                                     <h1>Boost engagement rate by learning how often to give users a hint - is it every 4 seconds or 6?</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row download">
+                                <div class="col-6">
+                                <h3>Want expert tips and insights for leveling up your creative strategy?</h3>
+                                    <a class="btn">Get the full guid</a>
+                                </div>
+                                <div class="col-6">
+                                    <img src="images/ebook.png">
                                 </div>
                             </div>
                         </div>
@@ -368,7 +445,7 @@
                                     <p>Though a subcategory of casual, the in-ad data for match-3 creatives is quite unique. The gameplay is familiar and straightforward, but the market is saturated. This makes it harder for match-3 creatives to compete, generating lower engagement but higher completion rates than casual creatives. </p>
                                 </div>
                                 <div class="col-6">
-                                    <video autoplay muted loop>
+                                    <video autoplay muted loop poster="images/intro-match3.png">
                                         <source src="images/intro-match31.mp4" type="video/mp4">
                                     </video>
                                 </div>
@@ -379,12 +456,12 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-6">
-                                    <video autoplay muted loop>
+                                    <video autoplay muted loop poster="images/engage-match3.png">
                                         <source src="images/engage-match32.mp4" type="video/mp4">
                                     </video>
                                 </div>
                                 <div class="col-6">
-                                    <h3>The average <span class="italic">time-to-engage rate*</span> for match-3 creatives is the longest out of all the genres. </h3>
+                                    <h3>The average <span class="italic tooltip">Time-to-engage rate*<span class="tooltip-content"> The number of seconds it takes for users to first tap on the ad</span></span> for match-3 creatives is the longest out of all the genres. </h3>
                                     <h1>7.4 seconds avg.</h1>
                                 </div>
                             </div>
@@ -394,25 +471,25 @@
                         <div class="container">
                             <div class="row hascircles">
                                 <div class="col-6">
-                                    <h3>The saturated market and fierce competition for match-3 creatives makes it more difficult to rise above the noise and engage users, keeping <span class="italic">engagement rate* </span> low. </h3>
+                                    <h3>The saturated market and fierce competition for match-3 creatives makes it more difficult to rise above the noise and engage users, keeping <span class="italic tooltip"> Engagement rate*<span class="tooltip-content">The percentage of users who actively engage with ads in an app</span></span> low. </h3>
                                 </div>
                                 <div class="col-6 circleholder match-3-1">
                                     <div class="circles">
                                         <div class="small-circle">
-                                            <span class="italic">51%</span>
-                                            <span class="italic">Midcore</span>
+                                            <span>51%</span>
+                                            <span>Midcore</span>
                                         </div>
                                         <div class="small-circle">
-                                            <span class="italic">58%</span>
-                                            <span class="italic">Match-3</span>
+                                            <span>58%</span>
+                                            <span>Match-3</span>
                                         </div>
                                         <div class="big-circle">
-                                            <span class="italic">85%</span>
-                                            <span class="italic">Hyper-casual</span>
+                                            <span>85%</span>
+                                            <span>Hyper-casual</span>
                                         </div>
                                         <div class="small-circle">
-                                            <span class="italic">60%</span>
-                                            <span class="italic">Casual</span>
+                                            <span>60%</span>
+                                            <span>Casual</span>
                                         </div>
                                     </div>                                
                                 </div>
@@ -423,11 +500,11 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-6">
-                                    <h3>The gameplay for match-3 creatives, while straightforward, still requires the user to scan and search for matches, which adds a few seconds to the <span class="italic">time-to-complete rate*</span>. </h3> 
+                                    <h3>The gameplay for match-3 creatives, while straightforward, still requires the user to scan and search for matches, which adds a few seconds to the <span class="italic tooltip">Time-to-complete rate*<span class="tooltip-content">The number of seconds it takes for users to complete the ad.</span></span> </h3> 
                                     <h1>19 seconds avg.</h1>
                                 </div>
                                 <div class="col-6">
-                                    <video autoplay muted loop>
+                                    <video autoplay muted loop poster="images/completematch3.png">
                                         <source src="images/complete-match33.mp4" type="video/mp4">
                                     </video>
                                 </div>
@@ -438,26 +515,26 @@
                         <div class="container">
                             <div class="row hascircles">
                                 <div class="col-6">
-                                    <h3>Match-3 gameplay is generally straightforward, familiar, and doesn’t stray from the genre, which is why <span class="italic">completion rate*</span> is on the high side.</h3>
+                                    <h3>Match-3 gameplay is generally straightforward, familiar, and doesn’t stray from the genre, which is why <span class="italic tooltip">Completion Rate*<span class="tooltip-content">The percentage of users who complete the playable ad</span></span> is on the high side.</h3>
                                 </div>
                                 <div class="col-6">
                                     <div class="col-6 circleholder match-3-2">
                                         <div class="circles">
                                             <div class="small-circle">
-                                                <span class="italic">39%</span>
-                                                <span class="italic">Midcore</span>
+                                                <span>39%</span>
+                                                <span>Midcore</span>
                                             </div>
                                             <div class="small-circle">
-                                                <span class="italic">34%</span>
-                                                <span class="italic">Match-3</span>
+                                                <span>34%</span>
+                                                <span>Match-3</span>
                                             </div>
                                             <div class="big-circle">
-                                                <span class="italic">73%</span>
-                                                <span class="italic">Hyper-casual</span>
+                                                <span>73%</span>
+                                                <span>Hyper-casual</span>
                                             </div>
                                             <div class="small-circle">
-                                                <span class="italic">28%</span>
-                                                <span class="italic">Casual</span>
+                                                <span>28%</span>
+                                                <span>Casual</span>
                                             </div>
                                         </div>                                
                                     </div> 
@@ -467,18 +544,18 @@
                     </div>
                     <div class="slide-section" data-menu="six">
                         <div class="container">
-                           <div class="row">
+                           <div class="row align-start">
                                 <div class="col-6">
-                                    <h3>Match-3 creatives have the second-highest <span class="italic">click-to-store rate*</span>, behind hyper-casual.</h3>
+                                    <h3>Match-3 creatives have the second-highest <span class="italic tooltip">Click-to-store rate*<span class="tooltip-content">The percentage of users who go to the app store from the ad</span></span>, behind hyper-casual.</h3>
                                 </div>
                                 <div class="col-6">
                                     <div class="row">
                                         <div class="col-6">
-                                            <h1>44% avg.</h1>
+                                            <h2>44% avg.</h2>
                                             <p class="title">out of completions</p>
                                         </div>
                                         <div class="col-6">
-                                            <h1>15% avg. </h1>
+                                            <h2>15% avg. </h2>
                                             <p class="title">Out of total impressions</p>
                                         </div>
                                     </div>
@@ -499,12 +576,12 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-5">
-                                    <video autoplay muted loop>
+                                    <video autoplay muted loop poster="images/ipm-match3.png">
                                         <source src="images/match3ipm.mp4" type="video/mp4">
                                     </video>
                                 </div>
                                 <div class="col-6 offset-1">
-                                    <h3><span class="italic">IPM* </span> for match-3 creatives is the lowest of all the genres, likely because of how saturated the match-3 market is.</h3>
+                                    <h3><span class="italic tooltip">IPM*<span class="tooltip-content"> Installs per mille, the number of app installs per one thousand ad impressions</span></span> for match-3 creatives is the lowest of all the genres, likely because of how saturated the match-3 market is.</h3>
                                     <h1>2-4 avg. IPM </h1>
                                 </div> 
                             </div>                           
@@ -516,6 +593,17 @@
                                 <div class="col-12">
                                     <h3 style="color: #2713a3; margin-bottom: 10px;">For your next A/B test, try to: <span> <video class="shas" autoplay muted loop><source src="images/shas-hand.mp4" type="video/mp4"></video></span></h3>
                                     <h1>See how traditional match-3 gameplay performs against a playable that’s all about the meta, like home decor or a farm upgrade.</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row download">
+                                <div class="col-6">
+                                <h3>Want expert tips and insights for leveling up your creative strategy?</h3>
+                                    <a class="btn">Get the full guid</a>
+                                </div>
+                                <div class="col-6">
+                                    <img src="images/ebook.png">
                                 </div>
                             </div>
                         </div>
@@ -533,7 +621,7 @@
                                     <p>Midcore games, which include RPG, shooter, and strategy, have a relatively niche following, but one which is dedicated and highly engaged. While their creatives don’t appeal to the masses, they remain quite high for engaged users - placing their benchmarks on the low end.</p>
                                 </div>
                                 <div class="col-6">
-                                    <video autoplay muted loop>
+                                    <video autoplay muted loop poster="images/intro-midcore.png">
                                         <source src="images/intro-midcore.mp4" type="video/mp4">
                                     </video>
                                 </div>
@@ -544,12 +632,12 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-6">
-                                    <video autoplay muted loop>
+                                    <video autoplay muted loop poster="images/engage-midcore.png">
                                         <source src="images/engage-midcore.mp4" type="video/mp4">
                                     </video>
                                 </div>
                                 <div class="col-6">
-                                    <h3>The average <span class="italic">time-to-engage rate*</span> for midcore creatives is the same as other genres.</h3>
+                                    <h3>The average <span class="italic tooltip">Time-to-engage rate*<span class="tooltip-content">The number of seconds it takes for users to first tap on the ad</span></span> for midcore creatives is the same as other genres.</h3>
                                     <h1>4.6 seconds avg.</h1>
                                 </div>
                             </div>
@@ -559,25 +647,25 @@
                         <div class="container">
                             <div class="row hascircles">
                                 <div class="col-6">
-                                    <h3>Midcore creatives tend to be more complex with detailed tutorials, raising the barrier to entry. They also don’t generally appeal to the masses, which lowers their overall <span class="italic" >engagement rate* </span>.</h3>
+                                    <h3>Midcore creatives tend to be more complex with detailed tutorials, raising the barrier to entry. They also don’t generally appeal to the masses, which lowers their overall <span class="italic tooltip"> Engagement Rate*<span class="tooltip-content">The percentage of users who actively engage with ads in an app</span></span>.</h3>
                                 </div>
                                 <div class="col-6 circleholder midcore-1">
                                     <div class="circles">
                                         <div class="small-circle">
-                                            <span class="italic">51%</span>
-                                            <span class="italic">Midcore</span>
+                                            <span>51%</span>
+                                            <span>Midcore</span>
                                         </div>
                                         <div class="small-circle">
-                                            <span class="italic">58%</span>
-                                            <span class="italic">Match-3</span>
+                                            <span>58%</span>
+                                            <span>Match-3</span>
                                         </div>
                                         <div class="big-circle">
-                                            <span class="italic">85%</span>
-                                            <span class="italic">Hyper-casual</span>
+                                            <span>85%</span>
+                                            <span>Hyper-casual</span>
                                         </div>
                                         <div class="small-circle">
-                                            <span class="italic">60%</span>
-                                            <span class="italic">Casual</span>
+                                            <span>60%</span>
+                                            <span>Casual</span>
                                         </div>
                                     </div>                                  </div>
                             </div>
@@ -587,11 +675,11 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-6">
-                                    <h3>The <span class="italic">time-to-complete rate*</span> rate for midcore creatives is the longest of all the genres, since the gameplay is generally complex and requires focus and attention from the user.</h3>
+                                    <h3>The <span class="italic tooltip">Time-to-complete rate*<span class="tooltip-content">The number of seconds it takes for users to complete the ad</span></span> rate for midcore creatives is the longest of all the genres, since the gameplay is generally complex and requires focus and attention from the user.</h3>
                                     <h1>26 seconds avg.</h1>
                                 </div>
                                 <div class="col-6">
-                                    <video autoplay muted loop>
+                                    <video autoplay muted loop poster="images/complete-midcore.png">
                                         <source src="images/complete-midcore.mp4" type="video/mp4">
                                     </video>
                                 </div>
@@ -602,44 +690,45 @@
                         <div class="container">
                             <div class="row hascircles">
                                 <div class="col-6">
-                                    <h3>The <span class="italic">completion rate*</span> for midcore creatives is on the high end - with the completion rate out of engaged users being extremely high, at 77%. Because it’s such a niche market, those who do engage are likely fans of the genre and more likely to complete the playable.</h3>
+                                    <h3>The <span class="italic tooltip">Completion Rate*<span class="tooltip-content">The percentage of users who complete the playable ad</span></span> for midcore creatives is on the high end - with the completion rate out of engaged users being extremely high, at 77%. Because it’s such a niche market, those who do engage are likely fans of the genre and more likely to complete the playable.</h3>
                                 </div>
                                 <div class="col-6 circleholder midcore-2">
                                     <div class="circles">
                                         <div class="small-circle">
-                                            <span class="italic">39%</span>
-                                            <span class="italic">Midcore</span>
+                                            <span>39%</span>
+                                            <span>Midcore</span>
                                         </div>
                                         <div class="small-circle">
-                                            <span class="italic">34%</span>
-                                            <span class="italic">Match-3</span>
+                                            <span>34%</span>
+                                            <span>Match-3</span>
                                         </div>
                                         <div class="big-circle">
-                                            <span class="italic">73%</span>
-                                            <span class="italic">Hyper-casual</span>
+                                            <span>73%</span>
+                                            <span>Hyper-casual</span>
                                         </div>
                                         <div class="small-circle">
-                                            <span class="italic">28%</span>
-                                            <span class="italic">Casual</span>
+                                            <span>28%</span>
+                                            <span>Casual</span>
                                         </div>
-                                    </div>                                  </div>
+                                    </div>   
+                                  </div>
                             </div>
                         </div>
                     </div>
                     <div class="slide-section" data-menu="six">
                         <div class="container">
-                           <div class="row">
+                           <div class="row align-start">
                                 <div class="col-6">
-                                    <h3><span class="italic">click-to-store rate*</span> for midcore creatives is on the low end.</h3>
+                                    <h3><span class="italic tooltip">Click-to-store rate*<span class="tooltip-content">The percentage of users who go to the app store from the ad</span></span> for midcore creatives is on the low end.</h3>
                                 </div>
                                 <div class="col-6">
                                     <div class="row">
                                         <div class="col-6">
-                                            <h1>33% avg.</h1>
+                                            <h2>33% avg.</h2>
                                             <p class="title">out of completions</p>
                                         </div>
                                         <div class="col-6">
-                                            <h1>13% avg.</h1>
+                                            <h2>13% avg.</h2>
                                             <p class="title">Out of total impressions</p>
                                         </div>
                                     </div>
@@ -661,12 +750,12 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-5">
-                                    <video autoplay muted loop>
+                                    <video autoplay muted loop poster="images/ipm-midcore.png">
                                         <source src="images/midcore-ipm.mp4" type="video/mp4">
                                     </video>
                                 </div>
                                 <div class="col-6 offset-1">
-                                    <h3><span class="italic">IPM*</span> for midcore creatives is middle range. There’s not as big of a market for midcore games, however, users who do consider themselves hardcore or midcore, are generally willing to install a game that catches their attention.</h3>
+                                    <h3><span class="italic tooltip">IPM*<span class="tooltip-content"> Installs per mille, the number of app installs per one thousand ad impressions</span></span> for midcore creatives is middle range. There’s not as big of a market for midcore games, however, users who do consider themselves hardcore or midcore, are generally willing to install a game that catches their attention.</h3>
                                     <h1>5-7 avg. IPM</h1>
                                 </div> 
                             </div>                           
@@ -676,36 +765,42 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-12">
-                                    <h3 style="color: #2713a3; margin-bottom: 10px;">For your next A/B test, try to: <span> <video class="shas" autoplay muted loop><source src="images/shas-hand.mp4" type="video/mp4"></video></span></h3>
+                                    <h3 style="color: #2713a3; margin-bottom: 10px;"><span> <video class="shas" autoplay muted loop><source src="images/shas-hand.mp4" type="video/mp4"></video></span> For your next A/B test, try to: </h3>
                                     <h1>Highlight a unique in-game element, like characters or upgrades, and compare the performance of two different kinds</h1>
                                 </div>
                             </div>
                         </div>
+                        <div class="container">
+                            <div class="row download">
+                                <div class="col-6">
+                                <h3>Want expert tips and insights for leveling up your creative strategy?</h3>
+                                    <a class="btn">Get the full guid</a>
+                                </div>
+                                <div class="col-6">
+                                    <img src="images/ebook.png">
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
                 </div>
 
-
-
             </div>
-                <div class="bottom-bar">
-                            <p>Want expert tips and insights for leveling up your creative strategy?</p>
-                            <div>
-                                <a class="btn" href="#">Learn more about Playworks</a>
-                                <a class="btn" href="#">Talk to us</a>
-                            </div>
-
-        </div>
     </div>
     </div>
 </div>
-<div class="chart" style="width: 300px; height: 300px;background-color: #2062EC; margin: 0 auto; margin-top: 100px;">
-    <span class="persent" style="font-size: 18px">45%<span>Hyper Casual</span></span>
-    <div class="child" style="width: 150px; height: 150px; background-color: #00CFDA; font-size: 14px;" data-angel="270" data-persent="34" data-text="test text"></div>
-    <div class="child" style="width: 130px; height: 130px; background-color: #935DF8; font-size: 16px;" data-angel="320" data-persent="45" data-text="test text"></div>
-    <div class="child" style="width: 190px; height: 190px; background-color: red; font-size: 12px;" data-angel="45" data-persent="45" data-text="test text"></div>
-    <div class="child" style="width: 110px; height: 110px; background-color: aquamarine; font-size: 14px;" data-angel="230" data-persent="67" data-text="test text"></div>
+    <div id="modal" class="modal">
+        <span class="close">&times;</span>
+        <iframe id="iframe" src="https://www.ironsrc.com/7010n00000160j0qaa/" title=""></iframe>
+    </div>
+<div class="overlay"></div>
+<div class="show-mobile">
+    <img class="logo" src="images/logo.png">
+    <video autoplay muted loop width="300" poster="images/engage-hyper.png">
+        <source src="images/sec_EngageS.mp4" type="video/mp4">
+    </video>
+    <p>Sorry, for a better experience please move to desktop </p>
 </div>
-
 </body>
 
 </html>
