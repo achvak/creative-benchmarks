@@ -6,7 +6,6 @@
         var currentPosition = 0;
         if(window.location.hash) {
             currentSlide = window.location.hash.split('_')[1];
-
         }
         var sliderWidth = 0;
         var navigation = document.querySelector(navigation);
@@ -14,7 +13,7 @@
         var slidesCount = 0;
 
         var sliderWrapper;
-        // var preventStickScroll = false;
+        var preventStickScroll = false;
 
         function addSliderWrapper() {
             slider.innerHTML = '<div class="slidesWrapper">' + slider.innerHTML + '</div>';
@@ -46,7 +45,6 @@
                 if(slide.id == 'sl_' + currentSlide) slide.classList.add('active');
             })
             currentPosition = sliderWidth * (currentSlide - 1) * -1;
-            console.log(currentPosition);
             changeSlide();
         }
 
@@ -75,6 +73,7 @@
                 li.forEach(function (item) {
                     item.addEventListener('click', function (e) {
                         preventStickScroll = true;
+                        console.log(preventStickScroll);
                         if(e.target.classList.contains('active')) return;
                         li.forEach(function (item) {
                             item.classList.remove('active');
@@ -82,30 +81,22 @@
                         e.target.classList.add('active');
 
                         var fromTop = slider.querySelector('.slide-section[data-menu=' + item.dataset.target + ']' ).offsetTop;
+
                         window.scrollTo({
                             top: fromTop,
                             behavior: "smooth"
                         });
-                        preventStickScroll = false;
-                        // window.scrollTo({
-                        //     top: fromTop,
-                        //     behavior: "smooth"
-                        // });
+                        setTimeout(function () {
 
-                        // window.onscroll = function(e) {
-                        //     var currentScrollOffset = window.pageYOffset || document.documentElement.scrollTop
-                        //     if (currentScrollOffset === fromTop) {
-                        //         preventStickScroll = false;
-                        //         window.onscroll = null // remove listener
-                        //     }
-                        // }
+                        })
+                        preventStickScroll = false;
+                        console.log(preventStickScroll);
                     })
                 })
             }
-            navigationHandler();
+            //navigationHandler();
             function init() {
                 navigationHandler();
-
             }
 
             return {
@@ -138,7 +129,7 @@
                 // var prevTopPosition = window.scrollY;
                 // smoothScroll();
                 window.addEventListener('scroll', function () {
-                    // if(preventStickScroll) return;
+                    //if(preventStickScroll) return;
                     smoothScroll();
 
                 });
@@ -165,7 +156,8 @@
                                 //     top: parseInt(section.getBoundingClientRect().top + scrollTop),
                                 //     behavior: "smooth"
                                 // });
-                                setActiveMenu(section.dataset.menu)
+                                if(preventStickScroll == false) setActiveMenu(section.dataset.menu);
+                                console.log(preventStickScroll);
                                 preventScroll = true;
                             }
                         }
@@ -216,9 +208,12 @@
     }
 
 
-    window.onload = function () {
+    // window.onload = function () {
+    //     sliderModule('.slider', '.slides').init();
+    // }
+    document.addEventListener('DOMContentLoaded', function(){
         sliderModule('.slider', '.slides').init();
-    }
+    })
 
 })(window, undefined)
 
