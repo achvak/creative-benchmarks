@@ -73,7 +73,6 @@
                 li.forEach(function (item) {
                     item.addEventListener('click', function (e) {
                         preventStickScroll = true;
-                        console.log(preventStickScroll);
                         if(e.target.classList.contains('active')) return;
                         li.forEach(function (item) {
                             item.classList.remove('active');
@@ -87,10 +86,9 @@
                             behavior: "smooth"
                         });
                         setTimeout(function () {
+                            preventStickScroll = false;
+                        }, 700)
 
-                        })
-                        preventStickScroll = false;
-                        console.log(preventStickScroll);
                     })
                 })
             }
@@ -126,10 +124,8 @@
             function stickToSection() {
                 var windowHeight = (window.innerHeight || document.documentElement.clientHeight);
                 var prevTopPosition = 0;
-                // var prevTopPosition = window.scrollY;
-                // smoothScroll();
+
                 window.addEventListener('scroll', function () {
-                    //if(preventStickScroll) return;
                     smoothScroll();
 
                 });
@@ -144,20 +140,16 @@
                     slideMap.forEach(function (item) {
                         if(scrollTopModifyed < item.pinPoint + 100 && scrollTopModifyed > item.pinPoint - 100) {
                             var section = document.querySelector(item.slideSection);
-                            if(!section.classList.contains('active')) {
+                            if(!section.classList.contains('active') && preventStickScroll == false) {
                                 slider.querySelectorAll('.slide:first-child .slide-section').forEach(function (sections) {
                                     sections.classList.remove('active');
                                 })
                                 section.classList.add('active');
                                 preventScroll = false
                             }
-                            if(section.classList.contains('active') && !preventScroll) {
-                                // window.scrollTo({
-                                //     top: parseInt(section.getBoundingClientRect().top + scrollTop),
-                                //     behavior: "smooth"
-                                // });
-                                if(preventStickScroll == false) setActiveMenu(section.dataset.menu);
-                                console.log(preventStickScroll);
+                            if(section.classList.contains('active') && !preventScroll && preventStickScroll == false) {
+
+                                 setActiveMenu(section.dataset.menu);
                                 preventScroll = true;
                             }
                         }
@@ -171,7 +163,6 @@
             function init() {
                 builDOMMap();
                 stickToSection();
-
             }
 
             return {
@@ -208,9 +199,7 @@
     }
 
 
-    // window.onload = function () {
-    //     sliderModule('.slider', '.slides').init();
-    // }
+
     document.addEventListener('DOMContentLoaded', function(){
         sliderModule('.slider', '.slides').init();
     })
