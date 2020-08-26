@@ -149,7 +149,7 @@
                             }
                             if(section.classList.contains('active') && !preventScroll && preventStickScroll == false) {
 
-                                 setActiveMenu(section.dataset.menu);
+                                setActiveMenu(section.dataset.menu);
                                 preventScroll = true;
                             }
                         }
