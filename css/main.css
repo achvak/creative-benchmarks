@@ -196,12 +196,10 @@ video {
   display: flex;
   align-items: center;
   width: 100%;
-  min-width: 1024px;
   max-width: 1500px;
 }
 
 .header{
-  min-width: 1000px;
 }
 
 .main .content {
@@ -338,6 +336,7 @@ a{
 }
 .logo {
   width: 150px;
+  min-width: 110px;
 }
 
 .x4 {
@@ -993,8 +992,114 @@ iframe{
   }
 }
 
-@media only screen and (max-width: 1000px) {
-  .show-mobile{
-    visibility: visible;
-  }
+@media only screen and (max-width: 1024px) {
+
+  .offset-1 {
+    margin-left: 0;
 }
+
+.row.download{
+      text-align: center;
+    padding-top: 60px !important;
+}
+
+  .col-6{
+    width: 100%;
+  }
+
+  .point {
+    width: 50px;
+  }
+
+  .row{
+    display: block;
+  }
+
+  .col-5{
+    width: 100%;
+  }
+
+  .container{
+    height: auto;
+    min-height: 100vh;
+  }
+  video{
+    display: block;
+    margin: 0 auto;
+    max-width: 400px;
+  }
+  .circles{
+    transform: scale(0.7);
+  }
+  .main{
+    padding-top: 60px;
+  }
+
+  .row .row .col-6{
+    padding: 0;
+    margin-bottom: 10px;
+  }
+
+  .circles{
+    margin-right: 20%;
+  }
+
+  .circleholder{
+    display: flex;
+  }
+
+  h1 video, h3 video{
+    display: inline-block;
+  }
+
+
+}
+
+@media only screen and (max-width: 768px) {
+  .slides li {
+    font-size: 11px;
+    margin-right: 10px;
+    padding: 8px 12px;
+  }
+
+  .modal {
+    width: 90%;
+  }
+
+  .name-wrapper h6{
+    font-size: 11px;
+  }
+  .circles{
+    transform: scale(0.6);
+  }
+
+
+  h3{
+    font-size: 18px;
+  }
+  .main .sidebar{
+    display: none;
+  }
+  .container {
+    padding: 80px 20px;
+
+  }
+  .slides{
+      position: absolute;
+    top: 70px;
+    left: 0;
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+  .circles{
+    margin-right: 50%;
+  }
+
+}
+
+@media only screen and (max-width: 400px) {
+  .circles{
+    margin-right: 70%;
+  }
+
+ }
