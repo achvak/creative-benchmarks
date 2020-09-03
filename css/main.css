@@ -205,6 +205,7 @@ video {
 .main .content {
   width: 100%;
 }
+
 .slider {
   width: 100%;
   overflow-x: hidden;
@@ -1055,9 +1056,7 @@ iframe{
   .circles{
     transform: scale(0.7);
   }
-  .main{
-    padding-top: 60px;
-  }
+
 
   .row .row .col-6{
     padding: 0;
@@ -1151,7 +1150,7 @@ iframe{
     display: none;
   }
   .container {
-    padding: 80px 20px;
+    padding: 120px 20px 40px;
 
   }
   .slides{
